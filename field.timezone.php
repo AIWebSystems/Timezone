@@ -33,11 +33,11 @@ class Field_timezone extends AbstractField
 	 * @param	array
 	 * @return	string
 	 */
-	public function form_output($data, $entry_id, $field)
+	public function form_output()
 	{
 		$choices = array();
 
-		if ($field->is_required != 'yes')
+		if ($this->field->is_required != 'yes')
 		{
 			$choices[null] = '---';
 		}
@@ -47,6 +47,6 @@ class Field_timezone extends AbstractField
 			$choices[$val] = $val;
 		}
 
-		return form_dropdown($data['form_slug'], $choices, empty($data['value']) ? $data['value'] : $field->field_data['default_value']);
+		return form_dropdown($this->form_slug, $choices, empty($this->value) ? $this->value : $this->getParameter('default_value'));
 	}
 }
