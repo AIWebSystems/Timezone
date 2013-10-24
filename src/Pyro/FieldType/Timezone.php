@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+<?php namespace Pyro\FieldType;
 
 use Pyro\Module\Streams_core\Core\Field\AbstractField;
 
@@ -10,7 +10,7 @@ use Pyro\Module\Streams_core\Core\Field\AbstractField;
  * @license		MIT
  * @link		http://aiwebsystems.com/
  */
-class Field_timezone extends AbstractField
+class Timezone extends AbstractField
 {
 	public $field_type_name 		= 'Timezone';
 	
