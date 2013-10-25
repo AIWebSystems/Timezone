@@ -12,20 +12,21 @@ use Pyro\Module\Streams_core\Core\Field\AbstractField;
  */
 class Timezone extends AbstractField
 {
-	public $field_type_name 		= 'Timezone';
+	public $field_type_name = 'Timezone';
 	
-	public $field_type_slug			= 'timezone';
+	public $field_type_slug = 'timezone';
 	
-	public $db_col_type				= 'varchar';
+	public $db_col_type = 'varchar';
 
-	public $custom_parameters		= array('default_value');
+	public $custom_parameters = array('default_value');
 
-	public $version					= '1.1';
+	public $version = '1.1';
 
-	public $author					= array('name' => 'Ryan Thompson', 'url' => 'http://www.aiwebsystems.com/');
+	public $author = array(
+		'name' => 'Ryan Thompson',
+		'url' => 'http://www.aiwebsystems.com/'
+		);
 	
-	// --------------------------------------------------------------------------
-
 	/**
 	 * Output form input
 	 *
@@ -33,7 +34,7 @@ class Timezone extends AbstractField
 	 * @param	array
 	 * @return	string
 	 */
-	public function form_output()
+	public function formOutput()
 	{
 		$choices = array();
 
