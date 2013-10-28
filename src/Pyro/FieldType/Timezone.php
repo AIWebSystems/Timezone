@@ -34,7 +34,7 @@ class Timezone extends AbstractField
 	 * @param	array
 	 * @return	string
 	 */
-	public function formOutput()
+	public function formInput()
 	{
 		$choices = array();
 
