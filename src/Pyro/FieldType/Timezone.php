@@ -1,6 +1,6 @@
 <?php namespace Pyro\FieldType;
 
-use Pyro\Module\Streams_core\Core\Field\AbstractField;
+use Pyro\Module\Streams_core\AbstractFieldType;
 
 /**
  * Timezone Field Type
@@ -10,7 +10,7 @@ use Pyro\Module\Streams_core\Core\Field\AbstractField;
  * @license		MIT
  * @link		http://aiwebsystems.com/
  */
-class Timezone extends AbstractField
+class Timezone extends AbstractFieldType
 {
 	public $field_type_name = 'Timezone';
 	
