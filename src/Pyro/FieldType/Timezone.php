@@ -48,6 +48,6 @@ class Timezone extends AbstractFieldType
 			$choices[$val] = $val;
 		}
 
-		return form_dropdown($this->field_slug, $choices, empty($this->value) ? $this->value : $this->getParameter('default_value'));
+		return form_dropdown($this->form_slug, $choices, empty($this->value) ? $this->value : $this->getParameter('default_value'));
 	}
 }
