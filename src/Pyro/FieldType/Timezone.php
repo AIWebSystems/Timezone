@@ -5,49 +5,49 @@ use Pyro\Module\Streams_core\AbstractFieldType;
 /**
  * Timezone Field Type
  *
- * @author		Ryan Thompson
- * @copyright	Copyright (c) 2008-2013, AI Web Systems, Inc.
- * @license		MIT
- * @link		http://aiwebsystems.com/
+ * @author        Ryan Thompson
+ * @copyright    Copyright (c) 2008-2013, AI Web Systems, Inc.
+ * @license        MIT
+ * @link        http://aiwebsystems.com/
  */
 class Timezone extends AbstractFieldType
 {
-	public $field_type_name = 'Timezone';
-	
-	public $field_type_slug = 'timezone';
-	
-	public $db_col_type = 'string';
+    public $field_type_name = 'Timezone';
+    
+    public $field_type_slug = 'timezone';
+    
+    public $db_col_type = 'string';
 
-	public $custom_parameters = array('default_value');
+    public $custom_parameters = array('default_value');
 
-	public $version = '1.1';
+    public $version = '1.1';
 
-	public $author = array(
-		'name' => 'Ryan Thompson',
-		'url' => 'http://www.aiwebsystems.com/'
-		);
-	
-	/**
-	 * Output form input
-	 *
-	 * @access 	public
-	 * @param	array
-	 * @return	string
-	 */
-	public function formInput()
-	{
-		$choices = array();
+    public $author = array(
+        'name' => 'Ryan Thompson',
+        'url' => 'http://www.aiwebsystems.com/'
+        );
+    
+    /**
+     * Output form input
+     *
+     * @access     public
+     * @param    array
+     * @return    string
+     */
+    public function formInput()
+    {
+        $choices = array();
 
-		if ($this->field->is_required != 'yes')
-		{
-			$choices[null] = '---';
-		}
+        if ($this->field->is_required != 'yes')
+        {
+            $choices[null] = '---';
+        }
 
-		foreach (timezone_identifiers_list() as $key => $val)
-		{
-			$choices[$val] = $val;
-		}
+        foreach (timezone_identifiers_list() as $key => $val)
+        {
+            $choices[$val] = $val;
+        }
 
-		return form_dropdown($this->form_slug, $choices, empty($this->value) ? $this->value : $this->getParameter('default_value'));
-	}
+        return form_dropdown($this->form_slug, $choices, empty($this->value) ? $this->value : $this->getParameter('default_value'));
+    }
 }
