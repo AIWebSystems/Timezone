@@ -19,5 +19,5 @@ In your templates, you can use access the timezone code and the timezone full na
 *1.1 - August 30, 2012*
 
 * Updated to latest PyroStreams field type syntax.
-* Updated to work with is_required.
+* Updated to work with required.
 * Added code and name variables.

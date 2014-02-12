@@ -1,6 +1,6 @@
 <?php namespace Pyro\FieldType;
 
-use Pyro\Module\Streams_core\AbstractFieldType;
+use Pyro\Module\Streams\FieldType\FieldTypeAbstract;
 
 /**
  * Timezone Field Type
@@ -10,7 +10,7 @@ use Pyro\Module\Streams_core\AbstractFieldType;
  * @license        MIT
  * @link        http://aiwebsystems.com/
  */
-class Timezone extends AbstractFieldType
+class Timezone extends FieldTypeAbstract
 {
     public $field_type_name = 'Timezone';
     
@@ -38,7 +38,7 @@ class Timezone extends AbstractFieldType
     {
         $choices = array();
 
-        if ($this->field->is_required != 'yes')
+        if ($this->field->required != 'yes')
         {
             $choices[null] = '---';
         }
