@@ -44,16 +44,22 @@ class Timezone extends FieldTypeAbstract
      */
     public function formInput()
     {
-        $choices = array();
+        return form_dropdown($this->form_slug, $this->getOptions(), $this->value);
+    }
 
-        if ($this->field->required != 'yes') {
-            $choices[null] = '---';
+    /**
+     * Get options
+     *
+     * @return array
+     */
+    protected function getOptions()
+    {
+        $options = timezone_identifiers_list();
+
+        foreach ($options as &$option) {
+            $option = str_replace('_', ' ', $option);
         }
 
-        foreach (timezone_identifiers_list() as $key => $val) {
-            $choices[$val] = str_replace(array('_'), ' ', $val);
-        }
-
-        return form_dropdown($this->form_slug, $choices, $this->value ? : $this->getParameter('default_value'));
+        return $options;
     }
 }
